@@ -1,0 +1,12 @@
+Db_Server = "localhost"
+Db_Port = 3306
+Db_User = "root"
+Db_Password = "root"
+Db_Database = "salesanalytics"
+Db_Name = "mysql"
+Db_Type = ""
+
+
+SetMaxOpenConnsdb = "5"
+SetMaxIdleConnsdb = "4"
+SetConnMaxIdleTimedb = "10"

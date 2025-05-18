@@ -1,0 +1,92 @@
+2025/05/18 15:36:00 buildconnection.go:6: BuildConnection (+) 
+2025/05/18 15:36:00 dbconnection.go:14: Dbconnection (+) 
+2025/05/18 15:36:00 dbconfig.go:47: DB_Details (+) 
+2025/05/18 15:36:00 TomlRead.go:28: ReadTomlFile(+)
+2025/05/18 15:36:00 TomlRead.go:35: ReadTomlFile(-)
+2025/05/18 15:36:00 dbconfig.go:63: DB_Details (-) 
+2025/05/18 15:36:00 dbconfig.go:68: connectionpoolConfig (+) 
+2025/05/18 15:36:00 TomlRead.go:28: ReadTomlFile(+)
+2025/05/18 15:36:00 TomlRead.go:35: ReadTomlFile(-)
+2025/05/18 15:36:00 dbconfig.go:113: connectionpoolConfig (-) 
+2025/05/18 15:36:00 dbconnection.go:44: Dbconnection (-) 
+2025/05/18 15:36:00 buildconnection.go:14: BuildConnection (-) 
+2025/05/18 15:36:03 GetRevenue_api.go:14: GetUploadFile(+)
+2025/05/18 15:36:03 GetRevenue_api.go:27: --------------REvencue called-------------
+2025/05/18 15:36:03 GetRevenue_functoins.go:12: Revenue_Calculation(+)
+2025/05/18 15:36:03 GetRevenue_functoins.go:98: Revenue_by_region(+)
+2025/05/18 15:36:03 GetRevenue_functoins.go:113: Revenue_by_region(-)
+2025/05/18 15:36:03 GetRevenue_functoins.go:32: Total_RevenueBy by  region
+2025/05/18 15:36:03 GetRevenue_functoins.go:34: Total_RevenueBy by  region
+2025/05/18 15:36:03 GetRevenue_functoins.go:49: Revenue_Calculation(-)
+2025/05/18 15:36:09 GetUploadfile_api.go:14: GetUploadFile(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:68: Csv_FileReader(+)
+2025/05/18 15:36:09 TomlRead.go:28: ReadTomlFile(+)
+2025/05/18 15:36:09 TomlRead.go:35: ReadTomlFile(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 180.00 180
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 10.00 10 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C456 John Smith johnsmith@email.com 123 Main St, Anytown, CA 12345 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P123 UltraBoost Running Shoes 180 Shoes 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1001 P123 C456 2023-12-15 2 180 0.1 10 Credit Card North America 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 North America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 1299.00 1299
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 15.00 15 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C789 Emily Davis emilydavis@email.com 456 Elm St, Otherville, NY 54321 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P456 iPhone 15 Pro 1299 Electronics 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1002 P456 C789 2024-01-03 1 1299 0 15 PayPal Europe 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 Europe 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 59.99 59.99
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 5.00 5 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C456 John Smith johnsmith@email.com 123 Main St, Anytown, CA 12345 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P789 Levi's 501 Jeans 59.99 Clothing 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1003 P789 C456 2024-02-28 3 59.99 0.2 5 Debit Card Asia 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 Asia 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 180.00 180
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 8.00 8 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C101 Sarah Johnson sarahjohnson@email.com 789 Oak St, New City, TX 75024 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P123 UltraBoost Running Shoes 180 Shoes 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1004 P123 C101 2024-03-10 1 180 0 8 Credit Card South America 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 South America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 349.99 349.99
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 12.00 12 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C789 Emily Davis emilydavis@email.com 456 Elm St, Otherville, NY 54321 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P234 Sony WH-1000XM5 Headphones 349.99 Electronics 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1005 P234 C789 2024-04-22 1 349.99 0.15 12 PayPal North America 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 North America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:112: lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:113: col[8] unit Price: 1299.00 1299
+2025/05/18 15:36:09 GetUploadfile_functions.go:116: col[10] shipprig cost: 20.00 20 ,lErr: <nil>
+2025/05/18 15:36:09 GetUploadfile_functions.go:125: Customer:  {0 C101 Sarah Johnson sarahjohnson@email.com 789 Oak St, New City, TX 75024 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:126: Product:  {0 P456 iPhone 15 Pro 1299 Electronics 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:127: Order:  {0 1006 P456 C101 2024-05-18 2 1299 0.05 20 Debit Card Asia 0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:128: region:  {0 Asia 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}
+2025/05/18 15:36:09 GetUploadfile_functions.go:137: Csv_FileReader(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:244: en(input): [{0 North America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC} {0 Europe 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC} {0 Asia 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC} {0 South America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC} {0 North America 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC} {0 Asia 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC}]
+2025/05/18 15:36:09 GetUploadfile_functions.go:213: Upload_Region_data(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:224: Upload_Region_data(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:230: GetRegionData(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:238: GetRegionData(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:206: Regions--------: [{1 North America 2025-05-18 12:34:47 +0530 IST 0001-01-01 00:00:00 +0000 UTC} {2 Europe 2025-05-18 12:34:47 +0530 IST 0001-01-01 00:00:00 +0000 UTC} {3 Asia 2025-05-18 12:34:47 +0530 IST 0001-01-01 00:00:00 +0000 UTC} {4 South America 2025-05-18 12:34:47 +0530 IST 0001-01-01 00:00:00 +0000 UTC}]
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: North America
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 1
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: Europe
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 2
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: Asia
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 3
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: South America
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 4
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: North America
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 1
+2025/05/18 15:36:09 GetUploadfile_functions.go:39: lOrders[idx].Region: Asia
+2025/05/18 15:36:09 GetUploadfile_functions.go:40: strconv.Itoa(match) 3
+2025/05/18 15:36:09 GetUploadfile_functions.go:142: Upload_Customer_data(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:151: Upload_Customer_data(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:156: Upload_Product_data(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:165: Upload_Product_data(-)
+2025/05/18 15:36:09 GetUploadfile_functions.go:170: Upload_Orders_data(+)
+2025/05/18 15:36:09 GetUploadfile_functions.go:179: Upload_Orders_data(-)
+2025/05/18 15:36:09 GetUploadfile_api.go:38: GetUploadFile(-)
