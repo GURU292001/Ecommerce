@@ -4,7 +4,6 @@ import "time"
 
 // Customer Details
 type CustomerStruc struct {
-	Id               int       `gorm:"primaryKey"`
 	Customer_Id      string    `gorm:"column:customer_id"`
 	Customer_name    string    `gorm:"column:customer_name"`
 	Customer_email   string    `gorm:"column:customer_email"`
@@ -15,7 +14,6 @@ type CustomerStruc struct {
 
 // Product Details
 type ProductStruc struct {
-	Id          int       `gorm:"primaryKey"`
 	ProductId   string    `gorm:"column:product_id"`
 	ProductName string    `gorm:"column:product_name"`
 	Unit_price  float64   `gorm:"column:unit_price"`
@@ -26,7 +24,6 @@ type ProductStruc struct {
 
 // Order Details
 type OrderStruc struct {
-	Id             int     `gorm:"primaryKey"`
 	Order_Id       string  `gorm:"column:order_id"`
 	Product_Id     string  `gorm:"column:product_id"`
 	Customer_Id    string  `gorm:"column:customer_id"`

@@ -3,17 +3,91 @@ package main
 import (
 	"ecommerce/Sales_Analysis/handlers"
 	"ecommerce/dbconnection"
+	"ecommerce/helper"
+	"ecommerce/toml"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/gorilla/mux"
 )
 
-func AutoFetch() {
+func scheduleAt() {
 
+	for {
+
+		lNow := time.Now()
+
+		lDbConfig, lErr := toml.ReadTomlFile("./toml/serviceconfig.toml")
+		if lErr != nil {
+			log.Println("Error (DBDR01) ", lErr.Error())
+		}
+		lhourStr := toml.GetKeyVal(lDbConfig, "hour")
+		lminutesStr := toml.GetKeyVal(lDbConfig, "minute")
+
+		lhour, err := strconv.Atoi(lhourStr)
+		if err != nil {
+			log.Printf("Invalid hour value: %v", err)
+		}
+		lminutes, err := strconv.Atoi(lminutesStr)
+		if err != nil {
+			log.Printf("Invalid minute value: %v", err)
+		}
+		log.Println("lhour", lhour, ",minute:", lminutes)
+		if lNow.Hour() == lhour && lNow.Minute() == lminutes {
+			lErr = handlers.Set_csv_Datas()
+			if lErr != nil {
+				helper.LogError(lErr)
+			}
+			time.Sleep(61 * time.Second)
+
+		} else {
+			time.Sleep(30 * time.Second)
+		}
+
+	}
+
+}
+
+func Data_Refresh_Mechanism() {
+	for {
+		lDbConfig, lErr := toml.ReadTomlFile("./toml/serviceconfig.toml")
+		if lErr != nil {
+			log.Println("Error (DBDR01) ", lErr.Error())
+		}
+		lhourStr := toml.GetKeyVal(lDbConfig, "hour")
+		lminutesStr := toml.GetKeyVal(lDbConfig, "minute")
+
+		lhour, err := strconv.Atoi(lhourStr)
+		if err != nil {
+			log.Printf("Invalid hour value: %v", err)
+			continue
+		}
+		lminutes, err := strconv.Atoi(lminutesStr)
+		if err != nil {
+			log.Printf("Invalid minute value: %v", err)
+			continue
+		}
+		log.Println("hour:", lhour, ",minute:", lminutes)
+		now := time.Now()
+
+		if now.Hour() == lhour && now.Minute() == lminutes {
+
+			lErr = handlers.Set_csv_Datas()
+			if lErr != nil {
+				helper.LogError(lErr)
+			}
+
+			time.Sleep(61 * time.Second)
+
+		} else {
+			time.Sleep(30 * time.Second)
+		}
+
+	}
 }
 
 func main() {
@@ -36,6 +110,18 @@ func main() {
 	fmt.Println("Server started---(+)")
 
 	lRouter := mux.NewRouter()
+	// -------Data Refresh Mechanism (+)--------
+
+	lDbConfig, lErr := toml.ReadTomlFile("./toml/serviceconfig.toml")
+	if lErr != nil {
+		log.Println("Error (DBDR01) ", lErr.Error())
+	}
+	lAutoRun := toml.GetKeyVal(lDbConfig, "AutoRun")
+	log.Println("lAutoRun", lAutoRun)
+	if lAutoRun == "Y" {
+		go scheduleAt()
+	}
+	// -------Data Refresh Mechanism (-)--------
 
 	// EndPoints
 	lRouter.HandleFunc("/upload-file", handlers.GetUploadFile).Methods(http.MethodGet)
