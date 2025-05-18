@@ -10,6 +10,29 @@ import (
 	"net/http"
 )
 
+/*
+GetRevenue handles POST requests to calculate and return revenue details.
+
+- Request:
+  - Method: POST
+  - Body: JSON matching the Revenue_Req model.
+
+- Internal Logic:
+  - Decode JSON request into Revenue_Req struct.
+  - Call Revenue_Calculation with the input data.
+  - If successful, set status and send Revenue_Resp as JSON.
+  - On error, return appropriate error code and message.
+
+- Response (success):
+  JSON with status and revenue data.
+
+- Response (failure):
+  JSON with errorCode and errorMessage.
+
+Author: Gurumurugan L
+Date: 2025-05-18
+*/
+
 func GetRevenue(w http.ResponseWriter, r *http.Request) {
 	log.Println("GetUploadFile(+)")
 	(w).Header().Set("Access-Control-Allow-Origin", "*")

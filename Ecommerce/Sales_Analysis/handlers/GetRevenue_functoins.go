@@ -115,17 +115,18 @@ func Revenue_by_region(pInput models.Revenue_Req) (Revenue models.Revenue_Resp, 
 }
 
 // total Revenue
-func Total_revenue(pInput models.Revenue_Req) (Revenue models.Revenue_Resp, Err error) {
+func Total_revenue(pInput models.Revenue_Req) (Revenue models.Revenue_Resp, lErr error) {
 	log.Println("Total_revenue(+)")
 
 	var lTotalRevenue float64
 
-	lErr := dbconnection.Gdb_instance.Gormdb.Table("Orders o").Select("sum((o.quantity_sold * p.unit_price)- o.discount + o.shipping_cost ) total_revenue").Joins("JOIN products p ON o.product_id = p.product_id").Where("date_of_sale between ? and ?", pInput.From_date, pInput.To_date).Scan(&lTotalRevenue).Error
-	if lErr != nil {
+	lResult := dbconnection.Gdb_instance.Gormdb.Table("Orders o").Select("sum((o.quantity_sold * p.unit_price)- o.discount + o.shipping_cost ) total_revenue").Joins("JOIN products p ON o.product_id = p.product_id").Where("date_of_sale between ? and ?", pInput.From_date, pInput.To_date).Scan(&lTotalRevenue)
+	if lResult.Error != nil {
+		lErr = lResult.Error
 		helper.LogError(lErr)
 		return Revenue, lErr
 	}
 	Revenue.Total_revenue = lTotalRevenue
 	log.Println("Total_revenue(-)")
-	return Revenue, nil
+	return Revenue, lErr
 }
