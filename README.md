@@ -50,11 +50,7 @@ http://localhost:29069/
 ### ✅ Success Response Format for `/upload-file`
 
 ```json
-{
-    "status": "S",
-    "statusCode": "GUF01",
-    "msg": "Error 1054 (42S22): Unknown column 'unit_price' in 'INSERT INTO'"
-}
+{"status":"S","msg":"Successfully Data Updated"}
 ```
 ### ❌ Failure Response Format (Validation or User Error)
 
@@ -74,7 +70,7 @@ http://localhost:29069/
 
 ### ✅ Success Response Format `/get-revenue` 
 
-`Request`
+`Request Body`
 
 
 ```json
@@ -207,6 +203,12 @@ http://localhost:29069/
     "revenue_by_region": null
 }
 ```
+
+###  🔁 Refresh Mechanism Implemented
+- A daily routine runs at a configurable time specified in the TOML file.
+- At the scheduled time, it clears the database and reloads fresh data.
+- The refresh mechanism can be enabled or disabled via the TOML configuration.
+- The execution time and related settings are fully customizable in the TOML file.
 
 
 ### 📝 Notes
