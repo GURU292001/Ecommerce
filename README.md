@@ -4,7 +4,7 @@ This project processes a large CSV file containing historical sales data, potent
 
 # Technology Stack
 
-#  go versioin 1.22.6
+#  go version 1.22.6
 - Go (Golang): Backend APIs and CSV processing
 
 - GORM: ORM for database interactions
