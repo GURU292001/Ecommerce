@@ -21,6 +21,13 @@ This project processes large-scale sales data from CSV into a normalized MariaDB
 ```bash
 go mod tidy 
 ```
+
+## 📥 Run the Server
+
+```bash
+go run main.go
+```
+
 # 🌐 WebAuthn API Documentation
 
 This project implements a **WebAuthn-based authentication system**. Below is a list of available API endpoints.
