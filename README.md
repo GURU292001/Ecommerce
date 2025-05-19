@@ -1,49 +1,45 @@
 # Ecommerce  sales_analytics
 
-This project processes a large CSV file containing historical sales data, potentially consisting of millions of rows.
+This project processes large-scale sales data from CSV into a normalized MariaDB database. It supports both scheduled and on-demand data refreshes with validation, deduplication, and logging. A RESTful API provides endpoints to trigger data updates and calculate key revenue metrics by date, product, category, or region. Designed for scalability and reliable business insights.
 
-# Technology Stack
 
-#  go version 1.22.6
-- Go (Golang): Backend APIs and CSV processing
 
-- GORM: ORM for database interactions
-- MariaDB(SQL): Database to store sales records
-- JSON API: For frontend/backend communication
+## 🛠 Tech Stack
 
-## External Package
+- **Go (Golang)** `v1.22.6` – Backend APIs and CSV processing  
+- **GORM** – ORM for seamless database interactions  
+- **MariaDB (SQL)** – Relational database for storing normalized sales data  
+- **JSON API** – For communication between frontend and backend
+## 📦 External Packages
 
-- Toml 
-- GORM 
-- MUX
+- **TOML** – For configuration file parsing  
+- **GORM** – ORM for efficient database interaction  
+- **Mux** – HTTP router for building RESTful APIs
 
-## Install Dependencies
+## 📥 Install Dependencies
 
-go mod tidy
+```bash
+go mod tidy 
+```
+# 🌐 WebAuthn API Documentation
 
-## Run
-
-go run main.go
-
-## LOG file 
-The application creates logs while running to help track the execution flow and debug issues.
-Log Location: log/logfile18052025.14.09.06.977875964.txt
-
-# WebAuthn API Documentation
-
-This project implements a WebAuthn-based authentication system. Below is a list of available API endpoints.
+This project implements a **WebAuthn-based authentication system**. Below is a list of available API endpoints.
 
 ---
-# Base URl
+
+## 🔗 Base URL
+
 
 http://localhost:29069/
+> Use this base URL to access all authentication-related endpoints during local development.
+
 ---
 ### 📘 API Endpoints
 
-| Route                   | Method | Request Body                                                                                  |
-|------------------------|--------|-----------------------------------------------------------------------------------------------|
-| `/upload-file` | GET | ``` no Body```          |
-| `/get-revenue`          | POST   | ```json\n{ "username": "johndoe", "displayName": "John Doe" }```                             |                                                                       |
+| Route           | Method | Request Body                                                                                      | Description                                                                                                  |
+|----------------|--------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `/upload-file` | GET    | _No body_                                                                                         | Used to refresh the data. It reads the latest CSV file and loads the data into the MariaDB database.        |
+| `/get-revenue` | POST   | ```json\n{ "from_date": "2023-03-22", "to_date": "2024-02-21","total_revenueby":"product" }```                                | Retrieves sales revenue data: total revenue, revenue by <ins> product</ins> ,  <ins> by category</ins> , and <ins> by region </ins>  within the date range. |
 
 
 
@@ -81,10 +77,10 @@ http://localhost:29069/
 }
 ```
 
-`total_revenueby parameters `
+### total_revenueby `parameters `
 
-` total_revenueby = 'product'` 
----
+`total_revenueby = 'product' ` 
+
 ```json
 {
     "status": "S",
@@ -118,8 +114,7 @@ http://localhost:29069/
 ```
 
 
-` Revenue By product = 'overall' or ''` 
----
+` Revenue By product = 'overall' or ''`
 ```json
 {
     "status": "S",
@@ -132,7 +127,6 @@ http://localhost:29069/
 ```
 
 ` Revenue By Category = 'category'` 
----
 ```json
 {
     "status": "S",
